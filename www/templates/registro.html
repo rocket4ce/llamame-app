@@ -1,0 +1,61 @@
+<ion-view view-title="Registro de Usuarios">
+  <ion-content>
+    <ion-list>
+      <form ng-submit="registro()">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Nombre</span>
+          <input type="text" ng-model="user.name" placeholder="Francisco ">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Email</span>
+          <input type="text" ng-model="user.email" placeholder="john@suhr.com">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Contraseña</span>
+          <input type="password" ng-model="user.password" placeholder="*****">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Región</span>
+          <input type="text" ng-model="user.region" placeholder="Ej: Coquimbo">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Comuna</span>
+          <input type="text" ng-model="user.comuna" placeholder="Ej: La serena">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Tu Dirección</span>
+          <input type="text" ng-model="user.direccion" placeholder="Ej: Las violetas 68">
+        </label>
+        <label class="item item-input item-select">
+          <span class="input-label">Ocupación?</span>
+            <select ng-model="user.grado">
+              <option value="">-Ocupación-</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="academico" selected>Academico</option>
+              <option value="funcionario">Funcionario</option>
+            </select>
+        </label>
+        <div class="item item-toggle">
+          Tienes Vehiculo?
+          <label class="toggle">
+             <input ng-model="checked" ng-init="checked=false" type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+          </label>
+        </div>
+
+        <label class="item item-input item-stacked-label" ng-if="checked" class="animate-if">
+          <span class="input-label">Tipo de Vehiculo</span>
+          <input ng-model="user.vehiculo" type="text" placeholder="Ingresar marca">
+        </label>
+        <br>
+        <button type="submit" class="button  button-balanced ion-person-add">
+          Registro
+        </botton>
+
+      </form>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
